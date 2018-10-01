@@ -44,11 +44,11 @@ app.get('/', function(request, response) {
 app.get('/post/:id', function(request, response) {
   // find the post int the "posts" array
   const post = posts.filter( function(post) {
-    return post.id === request.params.id;
+    return post.id == request.params.id;
   })[0];
 
   // render post.ejs template with the post content
-  respons.render('post', {
+  response.render('post', {
     author: post.author,
     title: post.title,
     body: post.body
